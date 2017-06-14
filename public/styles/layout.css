@@ -29,8 +29,71 @@ body {
  main {
    width: 450px;
    background-color: white;
-   margin: 140px auto 0 auto;
-   height: 500px;
+   margin: 0 auto 0 auto;
+   height: 300px;
  }
 
+ section { 
+   background-color: white;
+   padding-bottom: 1em;
+ }
+ article {
+  margin: 3em 2em 2em 2em;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+article:hover, article:active {
+  opacity: 1;
+  border: 1px solid black;
+  border-radius: 10px;
+  margin: 3em 2em 2em 2em;
+}
+article header {
+  background-color: #eee;
+  height: 100px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+header .img {
+  width: 80px;
+  height: 80px;
+  float: left;
+  border-radius: 10px;
+  margin:10px;
+  background:white;
+}
+header .username {
+  font-size: 25px;
+  float: left;
+  line-height: 0px;
+  font-weight: 700;
+}
+header .userfields {
+  float: right;
+  line-height: 40px;
+  padding-right: 10px;
+  font-size: 15px;
+}
+.content {
+  height: 80px;
+  line-height: 30px;
+  padding-left: 15px;
+}
+footer {
+  border-top: 2px solid #eee;
+  padding-left: 10px;
+}
+.fa {
+  display:none;
+}
+article:hover .fa {
+  display: inline-block;
+  float: right;
+  font-size: 20px;
+  color:  grey;
+  line-height: 10px;
+  padding: 4px;
+  margin-right: 4px;
+}
 
