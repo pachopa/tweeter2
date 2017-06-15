@@ -1,7 +1,6 @@
 .compose {
   border-bottom: 1px solid black;
 }
-
 main .new-tweet {
   margin-right: 2em;
   margin-left: 2em;
@@ -11,14 +10,12 @@ main .new-tweet {
   top: 30px;
   border-radius: 10px;
   padding-top: 1px;
-  padding-bottom: 15px
+  padding-bottom: 15px;
 }
-
 form textarea {
   width: 100%;
   padding: 5px;
 }
-
 form .counter {
   float: right;
 }
