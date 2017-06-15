@@ -55,7 +55,7 @@ $(document).ready(function(){
     }
     );
   }
-
+  loadTweets();
   $('#createTweet').on('submit', function (event) {
     //check wheter text is empty or too long and pass the ajax post
     event.preventDefault();
