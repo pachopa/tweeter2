@@ -71,15 +71,6 @@ $(document).ready(function(){
     }
   });
 
-  // $('textarea').keyup(function() {
-  //     var inputLength = $(this).val().length;
-  //     var remain = 140 - inputLength;
-  //     if ( remain < 0) {
-  //       console.log("chris")
-  //       alert('Too much text');
-  //       return ;
-  //     }
-  //   });
   
 }); //document ready ends here
 
