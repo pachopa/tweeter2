@@ -32,7 +32,6 @@ body {
    margin: 0 auto 0 auto;
    height: 300px;
  }
-
  section { 
    background-color: white;
    padding-bottom: 30px;
@@ -88,7 +87,6 @@ footer {
 .fa-lag {
   display:none;
 }
-
 .fa {
   margin-right: 7px;
 }
