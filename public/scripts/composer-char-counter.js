@@ -5,9 +5,9 @@ $(document).ready(function(){
     var remain = 140 - inputLength;
     $('.counter').html(remain);
     if(remain >= 0){
-      $('.counter').css('color','black');
+      $('.counter').css('color', 'black');
     } else {
-      $('.counter').css('color','red');
+      $('.counter').css('color', 'red');
     }
   });
 });
