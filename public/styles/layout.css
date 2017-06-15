@@ -35,7 +35,8 @@ body {
 
  section { 
    background-color: white;
-   padding-bottom: 1em;
+   padding-bottom: 30px;
+   padding-top: 30px
  }
  article {
   margin: 3em 2em 2em 2em;
@@ -84,8 +85,12 @@ footer {
   border-top: 2px solid #eee;
   padding-left: 10px;
 }
-.fa {
+.fa-lag {
   display:none;
+}
+
+.fa {
+  margin-right: 7px;
 }
 article:hover .fa {
   display: inline-block;
@@ -96,4 +101,3 @@ article:hover .fa {
   padding: 4px;
   margin-right: 4px;
 }
-
