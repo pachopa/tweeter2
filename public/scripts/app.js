@@ -1,5 +1,9 @@
 $(document).ready(function(){
+  //hide textarea form
+  $(".new-tweet").hide();
+
   function renderTweets(tweets) {
+    //looping the tweetsDB
    $('#all-tweet').empty();
     for(var i in tweets) { 
       var $value = createTweetElement(tweets[i]);
@@ -7,6 +11,7 @@ $(document).ready(function(){
   }
 
   function createTweetElement(tweet) {
+    //make html5 element with css
     var $article = $('<article>').addClass('tweet') ;
     var $header = $('<header>');
     var $img = $('<img>').addClass('img');
@@ -20,7 +25,6 @@ $(document).ready(function(){
     var $icon3 = $('<i>').addClass('fa fa-bell fa-lag');
 
     $img.attr('src',tweet.user.avatars.small);
-
     $username.text(tweet.user.name);
     $userfields.text(tweet.user.handle);
     $content.text(tweet.content.text);
@@ -42,6 +46,7 @@ $(document).ready(function(){
   }
 
   function loadTweets() {
+    //get the data and call renderTweets Function
     $.ajax({
       method: 'GET',
       url: '/tweets/',
@@ -53,6 +58,7 @@ $(document).ready(function(){
   }
 
   $('#createTweet').on('submit', function (event) {
+    //check wheter text is empty or too long and pass the ajax post
     event.preventDefault();
     var text = $('textarea').val();
     if (text.length === 0) {
@@ -67,10 +73,16 @@ $(document).ready(function(){
       }).done(function () {
         loadTweets(); 
         $('textarea').val('');
+        $('.counter').text('140');
       });
     }
   });
 
-  
-}); //document ready ends here
+  $('button').on('click', function() {
+    //slide up and down the from and select the textarea
+    $(".new-tweet").slideToggle(400, function(){
+      $("textarea").select();
+    })
+  })
+});
 
