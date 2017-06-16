@@ -1,26 +1,32 @@
 $(function(){
   //hide textarea form
   $(".new-tweet").hide();
-  
+
   /**
    * 
-   * @params { tweet } obj
+   * @params { tweet } obj (json format)
    * 
    * 
    */
+  
   function createTweetElement(tweet) {
     //generate html5 element with css
-    var $article = $('<article>').addClass('tweet');
-    var $header = $('<header>');
-    var $img = $('<img>').addClass('img');
-    var $username = $('<p>').addClass('username');
-    var $userfields = $('<p>').addClass('userfields');
-    var $content = $('<p>').addClass('content');
-    var $footer = $('<footer>');
-    var $date = $('<p>');
-    var $icon1 = $('<i>').addClass('fa fa-heart fa-lag');
-    var $icon2 = $('<i>').addClass('fa fa-flag fa-lag');
-    var $icon3 = $('<i>').addClass('fa fa-bell fa-lag');
+    const $article = $('<article>').addClass('tweet');
+    const $header = $('<header>');
+    const $img = $('<img>').addClass('img');
+    const $username = $('<p>').addClass('username');
+    const $userfields = $('<p>').addClass('userfields');
+    const $content = $('<p>').addClass('content');
+    const $footer = $('<footer>');
+    const $date = $('<p>');
+    const $icon1 = $('<i>')
+      .addClass('fa fa-heart fa-lag')
+      .on('click', function(){
+        $(this).toggleClass("fa fa-heart-o fa fa-heart fa-lag");
+      });
+    
+    const $icon2 = $('<i>').addClass('fa fa-flag fa-lag');
+    const $icon3 = $('<i>').addClass('fa fa-bell fa-lag');
     
     $img.attr('src', tweet.user.avatars.small);
     $username.text(tweet.user.name);
