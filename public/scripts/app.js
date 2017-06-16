@@ -3,10 +3,10 @@ $(function(){
   $(".new-tweet").hide();
 
   /**
-   * 
+   *
    * @params { tweet } obj (json format)
-   * 
-   * 
+   *
+   *
    */
   
   function createTweetElement(tweet) {
