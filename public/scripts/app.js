@@ -1,17 +1,23 @@
-$(document).ready(function(){
+$(function(){
   //hide textarea form
   $(".new-tweet").hide();
-
+  
+  /**
+   * 
+   * @params { tweet } obj
+   * 
+   * 
+   */
   function createTweetElement(tweet) {
-    //make html5 element with css
-    var $article = $('<article>').addClass('tweet') ;
+    //generate html5 element with css
+    var $article = $('<article>').addClass('tweet');
     var $header = $('<header>');
     var $img = $('<img>').addClass('img');
-    var $username = $('<p>').addClass('username') ;
+    var $username = $('<p>').addClass('username');
     var $userfields = $('<p>').addClass('userfields');
-    var $content = $('<p>').addClass('content') ;
+    var $content = $('<p>').addClass('content');
     var $footer = $('<footer>');
-    var $date = $('<p>') ;
+    var $date = $('<p>');
     var $icon1 = $('<i>').addClass('fa fa-heart fa-lag');
     var $icon2 = $('<i>').addClass('fa fa-flag fa-lag');
     var $icon3 = $('<i>').addClass('fa fa-bell fa-lag');
@@ -39,8 +45,8 @@ $(document).ready(function(){
   function renderTweets(tweets) {
     //looping the tweetsDB
     $('#all-tweet').empty();
-    for(var i in tweets) {
-      var $value = createTweetElement(tweets[i]);
+    for(var tweet of tweets) {
+      createTweetElement(tweet);
     }
   }
 
@@ -52,11 +58,12 @@ $(document).ready(function(){
       dataType: 'json'
     }).done(function (data) {
       renderTweets(data);
-    }
-    );
+    });
   }
+
   loadTweets();
-  $('#createTweet').on('submit', function (event) {
+
+  $('#createTweet').on('submit', function(event) {
     //check wheter text is empty or too long and pass the ajax post
     event.preventDefault();
     var text = $('textarea').val();
